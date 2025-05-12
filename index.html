@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Página Interactiva</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+      text-align: center;
+      padding: 50px;
+    }
+
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+      margin: 10px;
+    }
+
+    #saludo {
+      font-size: 20px;
+      margin-top: 20px;
+      color: #0077cc;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>¡Bienvenido a mi página interactiva!</h1>
+
+  <p>¿Cómo te llamas?</p>
+  <input type="text" id="nombre" placeholder="Escribe tu nombre">
+  <button onclick="saludar()">Saludar</button>
+
+  <p id="saludo"></p>
+
+  <script>
+    function saludar() {
+      let nombre = document.getElementById("nombre").value;
+      if (nombre.trim() !== "") {
+        let mensaje = "¡Hola, " + nombre + "! Qué bueno verte por aquí 😄";
+        document.getElementById("saludo").innerText = mensaje;
+      } else {
+        document.getElementById("saludo").innerText = "Por favor escribe tu nombre primero.";
+      }
+    }
+  </script>
+
+</body>
+</html>
